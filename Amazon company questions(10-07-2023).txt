@@ -1,4 +1,4 @@
-Amazon conpany questions(10-07-2023) (sample quesions):
+Amazon company questions(10-07-2023) (sample quesions):
 
 1.convert all the lower/upper case letters in a string into characters without using inbuilt functions. find palindrome or not.(palindrome = if a string is given if we reverse it also it should give that ex:malayalam)
 /******************************************************************************

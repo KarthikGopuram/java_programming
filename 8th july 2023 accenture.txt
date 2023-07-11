@@ -1,0 +1,231 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+1.rats question
+
+3.password requirements set code
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int r=sc.nextInt();
+		int units=sc.nextInt();
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<arr.length;i++){
+		    arr[i]=sc.nextInt();
+		}
+		int total=r*units;
+		int sum=0;
+		int count=0;
+		for(int i=0;i<n;i++){
+		    if(sum<=total){
+		        sum=sum+arr[i];
+		        count++;
+		    }
+		    else{
+		        System.out.println(count);
+		        return;
+		    }
+		}
+		System.out.println("0");
+	}
+}
+input:
+2
+8
+2 8 3 5 7 4 1 2
+output:
+4
+
+2nd question xor and other characters and output should be 1
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String s = "1C0C1C1A0B1";//1
+		ArrayList<Character> op = new ArrayList<>();
+		ArrayList<Character> bi = new ArrayList<>();
+		for(int i = 0;i<s.length();i++){
+		    if(s.charAt(i) == 'A' || s.charAt(i) == 'B' || s.charAt(i) == 'C'){
+		        op.add(s.charAt(i));
+		    }else{
+		        bi.add(s.charAt(i));
+		    }
+		}
+		int r = 0;
+		
+		for(int i = 0;i<op.size();i++){
+		    ArrayList<Character> pru = new ArrayList<>();
+		    if(op.get(i) == 'A'){
+		       if(bi.get(0) == '1' && bi.get(1) == '1'){
+		            r = 1;
+		        }else{
+		            r = 0;
+		        } 
+		    }else if(op.get(i) == 'B'){
+		         if(bi.get(0) == '1' || bi.get(1) == '1'){
+		            r = 1;
+		        }else{
+		            r = 0;
+		        }
+		    }else{
+		         if(bi.get(0) == bi.get(1)){
+		            r = 0;
+		        }else{
+		            r = 1;
+		        }
+		    }
+		    if(bi.size() > 2){
+		        pru.add((char)(r+'0'));
+		        for(int k = 2;k<bi.size();k++){
+		            pru.add(bi.get(k));
+		        }
+		    }else if(bi.size() == 2){
+		        pru.add((char)(r+'0'));
+		    }
+		    bi = pru;
+		    System.out.println(bi);
+		}
+	}
+}
+
+3.
+code/;
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    String s = sc.nextLine ();
+    for (int i = 0; i < s.length (); i++)
+      {
+	if (s.length () >= 4)
+	  {
+	    if (s.charAt (0) != '1' && s.charAt (0) != '2'
+		&& s.charAt (0) != '3' && s.charAt (0) != '4'
+		&& s.charAt (0) != '5' && s.charAt (0) != '6'
+		&& s.charAt (0) != '7' && s.charAt (0) != '8'
+		&& s.charAt (0) != '9' && s.charAt (0) != '0')
+	      {
+		if (s.charAt (i) != ' ' || s.charAt (i) != '/')
+		  {
+		    if (Character.isUpperCase (s.charAt (i)))
+		      {
+			System.out.print ("1");
+			return;
+		      }
+		    else
+		      {
+			System.out.print ("0");
+			return;
+		      }
+		  }
+		else
+		  {
+		    System.out.print ("0");
+		    return;
+		  }
+	      }
+	    else
+	      {
+		System.out.print ("0");
+		return;
+	      }
+	  }
+	else
+	  {
+	    System.out.print ("0");
+	    return;
+	  }
+      }
+  }
+}
+i/p: 1karthik
+op:
+0
+
+4th code:
+array given seperate odd and even and show the highest number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    int arr[]=new  int[n];
+	    for(int i=0;i<arr.length;i++){
+	        arr[i]=sc.nextInt();
+	    }
+		//int[] arr = {2,4,1,7,8,9};
+		ArrayList<Integer> e = new ArrayList<>();
+		ArrayList<Integer> o = new ArrayList<>();
+		for(int i = 0;i<arr.length;i++){
+		    if(i%2 == 0){
+		        e.add(arr[i]);
+		    }else{
+		        o.add(arr[i]);
+		    }
+		}
+		Collections.sort(e);
+		Collections.sort(o);
+		int ans = e.get(e.size()-2) + o.get(o.size()-2);
+		System.out.println(e);
+		System.out.println(o);
+		System.out.println(ans);
+	}
+}
+
+i/p:
+6
+2 4 1 7 8 9
+o/p:
+[1, 2, 8]
+[4, 7, 9]
+9
+
+error is there rectify in this code
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    int arr[]=new  int[n];
+	    for(int i=0;i<arr.length;i++){
+	        arr[i]=sc.nextInt();
+	    }
+		int sum1= 0 ;
+		int sum2 =0 ;
+		for(int i=0;i<arr.length;i++){
+		    sum1=0;
+		    sum2=0;
+		    for(int j=0;j<i;j++){
+		        sum1=sum1+arr[j];
+		    }
+		    for(int k =i+1;k<arr.length;k++){
+		        sum2=sum1+arr[k];
+		    }
+		    if(sum1==sum2){
+		    System.out.println(sum1+" ");
+		    System.out.println(arr[i]);
+		    return;
+		}
+		}
+		System.out.println("-1");
+	}
+}
